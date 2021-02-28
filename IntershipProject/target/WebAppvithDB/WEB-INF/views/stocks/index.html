@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Stocks</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Company</th>
+        <th>Price</th>
+    </tr>
+    <div th:each="stock : ${stocks}">
+        <tr>
+            <td th:text="${stock.getDate()}">Date</td>
+            <td>
+                <a th:href="@{/stocks/stock/{company}(company=${stock.getCompany()})}" th:text="${stock.getCompany()}">Company</a>
+            </td>
+            <td th:text="${stock.getPrice()}">Price</td>
+        </tr>
+    </div>
+</table>
+
+<br/>
+
+<a href="/stocks/new">Add new stocks</a>
+</body>
+</html>
