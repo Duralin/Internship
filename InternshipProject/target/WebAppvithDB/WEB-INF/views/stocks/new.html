@@ -8,18 +8,15 @@
 <form th:method="POST" th:action="@{/stocks}" th:object="${stock}">
     <label for="date">Date: </label>
     <input type="text" th:field="*{date}" id="date"/>
-    <div th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Name Error
-    </div>
+
     <br/>
     <label for="company">Company: </label>
     <input type="text" th:field="*{company}" id="company"/>
-    <div th:if="${#fields.hasErrors('company')}" th:errors="*{company}">Name Error
-    </div>
+
     <br/>
     <label for="price">Price: </label>
     <input type="text" th:field="*{price}" id="price"/>
-    <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Name Error
-    </div>
+
     <br/>
     <input type="submit" value="Create"/>
 </form>

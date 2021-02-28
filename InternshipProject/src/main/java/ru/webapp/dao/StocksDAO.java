@@ -32,9 +32,9 @@ public class StocksDAO {
                 stock.getPrice());
     }
 
-    public void update(String name, Stock updatedStock) {
-        jdbcTemplate.update("UPDATE stocks SET date=?, company=?, price=? WHERE company=?", updatedStock.getDate(),
-                updatedStock.getCompany(), updatedStock.getPrice());
+    public void update(String name, Stock stock) {
+        jdbcTemplate.update("UPDATE stocks SET date=?, company=?, price=? WHERE company=?", stock.getDate(),
+                stock.getCompany(), stock.getPrice(), name);
     }
 
     public void delete(String company) {
